@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bank;
 use App\Models\Collateral;
 use App\Models\Designation;
+use App\Models\IdentityType;
 use App\Models\Title;
 use Illuminate\Http\Request;
 
@@ -46,6 +47,16 @@ class HelpersController extends Controller
         $returnValues = '';
         foreach($collateral as $i => $option){
             $returnValue = '<option value="'.$option->id.'">'.$option->name.'</option>';
+            $returnValues = $returnValues.$returnValue;
+        }
+        return $returnValues;
+    }
+
+    public function identities(){
+        $identities = IdentityType::all();
+        $returnValues = '';
+        foreach($identities as $i => $identity){
+            $returnValue = '<option value="'.$identity->id.'">'.$identity->name.'</option>';
             $returnValues = $returnValues.$returnValue;
         }
         return $returnValues;

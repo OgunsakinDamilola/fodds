@@ -13,10 +13,10 @@ class IdentityTypesTableSeeder extends Seeder
     public function run()
     {
         $identity_types = [
-            ['name' => 'Voter\'s Card'],
+            ['name' => 'Voter,s Card'],
             ['name' => 'National ID'],
             ['name' => 'International Passport'],
-            ['name' => 'Driver\'s License'],
+            ['name' => 'Driver,s License'],
         ];
 
         foreach ($identity_types as $key => $identity_type)

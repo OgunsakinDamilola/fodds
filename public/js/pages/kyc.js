@@ -1,6 +1,4 @@
 $(function(){
-    let title = [];
-
 
     $('#add_business').on('click',function(){
 
@@ -17,7 +15,7 @@ $(function(){
 
         $('#count_kyc_form').val(new_count);
 
-        var kyc_form = '    <div class="panel" id="kyc_form_'+ new_count +'">\n' +
+        var kyc_form = '<div class="panel" id="kyc_form_'+ new_count +'">\n' +
             '        <div class="panel-heading">\n' +
             '            <h3 class="panel-title">Business Owner / Partner Detail </h3>\n' +
             '        </div>\n' +
@@ -79,7 +77,7 @@ $(function(){
             '                <div class="col-md-3">\n' +
             '                    <div class="form-group has-feedback">\n' +
             '                        <label class="control-label text-semibold">Detail Designation</label>\n' +
-            '                        <select class="special_select form-control" name="designation" required>\n' +
+            '                        <select class="special_select form-control" name="designation[]" required>\n' +
             '                            <optgroup label="Designation">\n' + designations +
             '                            </optgroup>\n' +
             '                        </select>\n' +
@@ -88,21 +86,21 @@ $(function(){
             '                <div class="col-md-3">\n' +
             '                    <div class="form-group has-feedback">\n' +
             '                        <label class="control-label text-semibold"> Email</label>\n' +
-            '                        <input type="email" placeholder="E-mail" class="form-control" name="email" required>\n' +
+            '                        <input type="email" placeholder="E-mail" class="form-control" name="email[]" required>\n' +
             '                        <i class="demo-pli-mail form-control-feedback"></i>\n' +
             '                    </div>\n' +
             '                </div>\n' +
             '                <div class="col-md-3">\n' +
             '                    <div class="form-group has-feedback">\n' +
             '                        <label class="control-label text-semibold"> Phone Number</label>\n' +
-            '                        <input type="text" placeholder="11 digits number" class="form-control" name="phone" required>\n' +
+            '                        <input type="text" placeholder="11 digits number" class="form-control" name="phone[]" required>\n' +
             '                        <i class="demo-pli-old-telephone form-control-feedback"></i>\n' +
             '                    </div>\n' +
             '                </div>\n' +
             '                <div class="col-md-3">\n' +
             '                    <div class="form-group has-feedback">\n' +
             '                        <label class="control-label text-semibold"> Date of Birth</label>\n' +
-            '                        <input type="text" placeholder="Date of birth" class="form-control datepicker" name="date_of_birth" required>\n' +
+            '                        <input type="text" placeholder="Date of birth" class="form-control datepicker" name="date_of_birth[]" required>\n' +
             '                        <i class="demo-pli-calendar-4 form-control-feedback"></i>\n' +
             '                    </div>\n' +
             '                </div>\n' +
@@ -112,7 +110,10 @@ $(function(){
             '                <div class="col-md-3">\n' +
             '                    <div class="form-group has-feedback">\n' +
             '                        <label class="control-label text-semibold">ID Type</label>\n' +
-            '                        <input type="text" placeholder="Identity Card Type" class="form-control" name="id_type[]" required>\n' +
+            '                            <select name="id_type[]" required class="special_select form-control"> \n' +
+            '                            <optgroup label="Identity Type">\n' + identities +
+            '                            </optgroup>\n' +
+                                        '</select> \n' +
             '                        <i class="demo-pli-checked-user form-control-feedback"></i>\n' +
             '                    </div>\n' +
             '                </div>\n' +

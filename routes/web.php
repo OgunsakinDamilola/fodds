@@ -27,8 +27,11 @@ Route::get('/apply/{id}/financial-aid','FinancialAidController@apply');
 
 Route::get('/apply/{id}/financial-aid/financial-questionnaire','FinancialAidController@questionnaire');
 
+Route::post('/save/kyc/information','FinancialAidController@saveKycInformation');
+
 Route::get('/titles','HelpersController@titles');
 Route::get('/designations','HelpersController@designations');
 Route::get('/banks','HelpersController@banks');
 Route::get('/collateral','HelpersController@collateral');
+Route::get('/identities','HelpersController@identities');
 
