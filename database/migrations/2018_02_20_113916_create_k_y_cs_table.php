@@ -24,6 +24,7 @@ class CreateKYCsTable extends Migration
             $table->string('address');
             $table->integer('designation_id');
             $table->string('date_of_birth');
+            $table->integer('tax_identification_number')->nullable();
             $table->string('residential_address');
             $table->string('phone');
             $table->string('email');

@@ -28,7 +28,6 @@ class FinancialAidController extends Controller
             'identity_types' => IdentityType::getIdentityTypes(),
             'banks' => Bank::getBanks()
         ];
-
     }
 
     public function apply($type){
