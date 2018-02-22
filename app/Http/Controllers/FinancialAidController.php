@@ -11,7 +11,13 @@ use App\Models\Title;
 use Illuminate\Http\Request;
 
 class FinancialAidController extends Controller
-{
+
+    public function __construct()
+    {
+        $this->Helpers = new HelpersController();
+    }
+
+
     public function getFormsDependencies()
     {
         return [
@@ -22,11 +28,13 @@ class FinancialAidController extends Controller
             'identity_types' => IdentityType::getIdentityTypes(),
             'banks' => Bank::getBanks()
         ];
+
     }
 
-    public function apply($type)
-    {
-        return view('pages.aid-application.kyc', compact('type'));
+    public function apply($type){
+        $titles = $this->Helpers->titles();
+        $designations = $this->Helpers->designations();
+        return view('pages.aid-application.kyc',compact('type','titles','designations'));    
     }
 
     public function questionnaire($type)
