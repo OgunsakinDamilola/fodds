@@ -11,7 +11,7 @@ use App\Models\Title;
 use Illuminate\Http\Request;
 
 class FinancialAidController extends Controller
-
+{
     public function __construct()
     {
         $this->Helpers = new HelpersController();
