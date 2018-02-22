@@ -11,6 +11,7 @@ use App\Models\IdentityType;
 use App\Models\KYC;
 use App\Models\Title;
 use Illuminate\Http\Request;
+use nilsenj\Toastr\Facades\Toastr;
 
 class FinancialAidController extends Controller
 {
@@ -39,9 +40,11 @@ class FinancialAidController extends Controller
         return view('pages.aid-application.kyc',compact('type','titles','designations','identities'));
     }
 
-    public function questionnaire($type)
+    public function questionnaire()
     {
-        return view('pages.aid-application.questionnaire', compact('type'));
+        $type = session()->get('financial_aid_type');
+        $aid_id = session()->get('financial_aid_id');
+        return view('pages.aid-application.questionnaire', compact('type','aid_id'));
     }
 
     public function saveKycInformation(request $r)
@@ -70,7 +73,11 @@ class FinancialAidController extends Controller
             $financial_aid_id = $financial_aid->id;
             $data = $r->all();
             $store = KYC::store($data,$financial_aid_id,$r);
-            return view('pages.aid-application.questionnaire', compact('type','financial_aid_id','type'));
+            Toastr::success('You have completed the KYC form. Just few more forms and you will be done with your application');
+            session()->put('financial_aid_id',$financial_aid_id);
+            session()->put('financial_aid_type',$type);
+
+            return redirect(url('/apply/financial-aid/financial-questionnaire'));
         }
 
 
