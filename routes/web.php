@@ -23,6 +23,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/activation/{token}', 'Auth\RegisterController@verifyUser');
 
-Route::get('apply/{id}/financial-aid','FinancialAidController@apply');
+Route::get('/apply/{id}/financial-aid','FinancialAidController@apply');
 
-Route::get('apply/{id}/financial-aid/financial-questionnaire','FinancialAidController@questionnaire');
+Route::get('/apply/{id}/financial-aid/financial-questionnaire','FinancialAidController@questionnaire');
+
+Route::get('/titles','HelpersController@titles');
+Route::get('/designations','HelpersController@designations');
+Route::get('/banks','HelpersController@banks');
+Route::get('/collateral','HelpersController@collateral');

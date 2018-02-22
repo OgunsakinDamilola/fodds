@@ -36,10 +36,9 @@
                         <label class="control-label text-semibold">Title</label>
                         <select class="special_select form-control" name="title[]" required>
                             <optgroup label="Select Title">
-                                <option value="1">Mr. </option>
-                                <option value="2">Mrs. </option>
-                                <option value="3">Master </option>
-                                <option value="4">Miss </option>
+                                @foreach(\App\Models\Title::all() as $serial => $title)
+                                <option value="{{$title->id}}">{{$title->name}}</option>
+                                    @endforeach
                             </optgroup>
                         </select>
                     </div>
@@ -87,12 +86,12 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="form-group has-feedback">
-                        <label class="control-label text-semibold"> Designation</label>
+                        <label class="control-label text-semibold">Detail Designation</label>
                         <select class="special_select form-control" name="designation" required>
                             <optgroup label="Designation">
-                                <option value="1">Director </option>
-                                <option value="2">Owner </option>
-                                <option value="3">Partner </option>
+                                @foreach(\App\Models\Designation::all() as $serial => $designation)
+                                <option value="{{$designation->id}}">{{$designation->name}}</option>
+                                @endforeach
                             </optgroup>
                         </select>
                     </div>
@@ -182,15 +181,22 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="row">
-                        <div class="col-xs-6">
-                            <button class="btn btn-primary btn-block" type="submit"> Submit</button>
-                        </div>
+
+                        @if($type == 'Cooperate')
+                            <div class="col-xs-6">
+                                <button class="btn btn-primary btn-block" type="submit"> Submit</button>
+                            </div>
                         <div class="col-xs-3">
                             <button  type="button" id="add_business"  class="btn btn-primary btn-labeled btn-block" data-toggle="tooltip" data-original-title="Add another business owner or partner details form"><i class="btn-label fa fa-plus"></i> Add</button>
                         </div>
-                        <div class="col-xs-3">
-                            <button  type="button" id="remove_business" class="btn btn-danger btn-labeled btn-block" data-toggle="tooltip" data-original-title="Remove business owner or partner details form"><i class="btn-label fa fa-minus"></i> Remove</button>
-                        </div>
+                            <div class="col-xs-3">
+                                <button  type="button" id="remove_business" class="btn btn-danger btn-labeled btn-block" data-toggle="tooltip" data-original-title="Remove business owner or partner details form"><i class="btn-label fa fa-minus"></i> Remove</button>
+                            </div>
+                        @elseif($type == 'Individual')
+                            <div class="col-xs-6 col-xs-offset-3">
+                                <button class="btn btn-primary btn-block" type="submit"> Submit</button>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -201,5 +207,9 @@
 @endsection
 
 @section('javascript')
+    <script>
+        var titles = '<?= $titles ?>';
+        var designations = '<?= $designations ?>';
+    </script>
 <script src="{{asset('js/pages/kyc.js')}}"></script>
 @endsection

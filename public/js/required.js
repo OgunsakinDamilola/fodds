@@ -253,6 +253,38 @@ function extractError(error) {
     }
 }
 
+function getTitles(){
+
+        axios.get(baseUrl+'/titles')
+
+        .then(function(response){
+            return response.data;
+        });
+
+
+}
+
+function getBanks(){
+    axios.get(baseUrl+'/banks')
+        .then(function(response){
+            return response.data;
+        })
+}
+
+function getDesignations(){
+    axios.get(baseUrl+'/designations')
+        .then(function(response){
+            return response.data;
+        })
+}
+
+function getCollateral(){
+    axios.get(baseUrl+'/collateral')
+        .then(function(response){
+            return response.data;
+        })
+}
+
 
 $('.datepicker').datepicker({
     showClose : true,

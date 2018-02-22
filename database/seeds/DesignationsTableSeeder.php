@@ -19,6 +19,6 @@ class DesignationsTableSeeder extends Seeder
         ];
 
         foreach ($desginations as $key => $desgination)
-            Designation::create($desginations);
+            Designation::create($desgination);
     }
 }
