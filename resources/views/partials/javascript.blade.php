@@ -62,10 +62,12 @@
 <script src="{{asset('plugins/chosen/chosen.jquery.min.js')}}"></script>
 
 <!--noUiSlider [ OPTIONAL ]-->
-<script src="{{asset('plugins/noUiSlider/nouislider.min.js')}}"></script>
+{{--<script src="{{asset('plugins/noUiSlider/nouislider.min.js')}}"></script>--}}
 
 <!--Form Component [ SAMPLE ]-->
 <script src="{{asset('js/demo/form-component.js')}}"></script>
+
+<script src="{{asset('js/app.js')}}"></script>
 
 <script src="{{asset('js/required.js')}}"></script>
 

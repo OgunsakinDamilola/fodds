@@ -224,9 +224,11 @@
                                         <label class="col-sm-4 control-label">Bank Name</label>
                                         <div class="col-sm-8">
                                            <select class="form-control special_select">
-                                               <option value="">
-
+                                               @foreach(\App\Models\Bank::all() as $serial => $bank)
+                                               <option value="{{$bank->id}}">
+                                                  {{$bank->name}}
                                                </option>
+                                                   @endforeach
                                            </select>
                                         </div>
                                     </div>
@@ -293,8 +295,9 @@
                                         <label for="demo-is-inputnormal" class="col-sm-3 control-label"> Collateral</label>
                                         <div class="col-sm-6">
                                             <select class="special_select form-control" name="collateral">
-                                                <option value=""></option>
-                                                <option value=""></option>
+                                                @foreach(\App\Models\Collateral::all() as $serial => $collateral)
+                                                <option value="{{$collateral->id}}">{{$collateral->name}}</option>
+                                                    @endforeach
                                             </select>
                                         </div>
                                     </div>

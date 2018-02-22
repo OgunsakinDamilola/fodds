@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Bank;
 use App\Models\Collateral;
 use App\Models\Designation;
@@ -12,6 +13,11 @@ use Illuminate\Http\Request;
 
 class FinancialAidController extends Controller
 {
+    public function __construct()
+    {
+        $this->Helpers = new HelpersController();
+    }
+
     public function getFormsDependencies()
     {
         return [
@@ -24,9 +30,11 @@ class FinancialAidController extends Controller
         ];
     }
 
-    public function apply($type)
-    {
-        return view('pages.aid-application.kyc', compact('type'));
+    public function apply($type){
+        $titles = $this->Helpers->titles();
+        $designations = $this->Helpers->designations();
+        return view('pages.aid-application.kyc',compact('type','titles','designations'));
+
     }
 
     public function questionnaire($type)

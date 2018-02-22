@@ -1,13 +1,16 @@
 $(function(){
     let title = [];
 
+
     $('#add_business').on('click',function(){
+
+        $('#remove_business').removeClass('hidden');
 
         var count_kyc_form = $('#count_kyc_form').val();
         var new_count = +count_kyc_form + 1;
 
-
         if(new_count > 3){
+            $('#add_business').addClass('hidden');
             toastr.error('You can not have more than 3 details for one one financial aid');
             return false;
         }
@@ -27,11 +30,7 @@ $(function(){
             '                    <div class="form-group">\n' +
             '                        <label class="control-label text-semibold">Title</label>\n' +
             '                        <select class="special_select form-control" name="title[]" required>\n' +
-            '                            <optgroup label="Select Title">\n' +
-            '                                <option value="1">Mr. </option>\n' +
-            '                                <option value="2">Mrs. </option>\n' +
-            '                                <option value="3">Master </option>\n' +
-            '                                <option value="4">Miss </option>\n' +
+            '                            <optgroup label="Select Title">\n' + titles +
             '                            </optgroup>\n' +
             '                        </select>\n' +
             '                    </div>\n' +
@@ -79,12 +78,9 @@ $(function(){
             '            <div class="row">\n' +
             '                <div class="col-md-3">\n' +
             '                    <div class="form-group has-feedback">\n' +
-            '                        <label class="control-label text-semibold"> Designation</label>\n' +
+            '                        <label class="control-label text-semibold">Detail Designation</label>\n' +
             '                        <select class="special_select form-control" name="designation" required>\n' +
-            '                            <optgroup label="Designation">\n' +
-            '                                <option value="1">Director </option>\n' +
-            '                                <option value="2">Owner </option>\n' +
-            '                                <option value="3">Partner </option>\n' +
+            '                            <optgroup label="Designation">\n' + designations +
             '                            </optgroup>\n' +
             '                        </select>\n' +
             '                    </div>\n' +
@@ -168,7 +164,6 @@ $(function(){
 
 
 
-
         $('.kyc_forms').append(kyc_form);
 
         $(".special_select").select2({
@@ -187,8 +182,9 @@ $(function(){
 
         var count_kyc_form = $('#count_kyc_form').val();
         var new_count = +count_kyc_form - 1;
-
+        $('#add_business').removeClass('hidden');
         if(new_count < 1){
+            $('#remove_business').addClass('hidden');
             toastr.error('You can not have less than 1 details for a financial aid');
             return false;
         }
