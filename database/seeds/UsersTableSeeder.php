@@ -27,32 +27,38 @@ class UsersTableSeeder extends Seeder
 
         $admin = User::create([
            'email'=>'admin@fodds.com',
-            'password'=> bcrypt('admin')
+            'password'=> bcrypt('admin'),
+            'verified'=>1
         ]);
 
         $receptionist = User::create([
            'email'=>'receptionist@fodds.com',
-            'password'=> bcrypt('receptionist')
+            'password'=> bcrypt('receptionist'),
+            'verified'=>1
         ]);
 
         $accountant = User::create([
            'email'=>'accountant@fodds.com',
-            'password'=> bcrypt('accountant')
+            'password'=> bcrypt('accountant'),
+            'verified'=>1
         ]);
 
         $hod = User::create([
            'email'=>'hod@fodds.com',
-            'password'=> bcrypt('hod')
+            'password'=> bcrypt('hod'),
+            'verified'=>1
         ]);
 
         $supervisor = User::create([
            'email'=>'supervisor@fodds.com',
-            'password'=> bcrypt('supervisor')
+            'password'=> bcrypt('supervisor'),
+            'verified'=>1
         ]);
 
         $customer = User::create([
            'email'=>'customer@fodds.com',
-            'password'=> bcrypt('customer')
+            'password'=> bcrypt('customer'),
+            'verified'=>1
         ]);
 
         $admin->attachRole($admin_role);

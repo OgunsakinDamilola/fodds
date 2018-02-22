@@ -16,10 +16,10 @@ class CreateFinancialAidsTable extends Migration
         Schema::create('financial_aids', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->integer('financial_aid_type_id');
-            $table->string('amount_requested');
-            $table->integer('term');
-            $table->text('purpose_of_financing');
+            $table->integer('financial_aid_type_id')->nullable();
+            $table->string('amount_requested')->nullable();
+            $table->integer('term')->nullable();
+            $table->text('purpose_of_financing')->nullable();
             $table->timestamps();
         });
     }
