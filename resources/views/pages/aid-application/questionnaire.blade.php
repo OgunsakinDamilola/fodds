@@ -96,14 +96,14 @@
                                 <div id="demo-bv-tab1" class="tab-pane active in">
                                     <h3> Financial Aid Details</h3>
                                     <div class="form-group has-feedback">
-                                        <label class="col-lg-3 control-label">Aid Amount (&#x20a6;)</label>
-                                        <div class="col-lg-7">
+                                        <label class="col-lg-4 control-label">Aid Amount (&#x20a6;)</label>
+                                        <div class="col-lg-8">
                                             <input type="number" class="form-control" name="amount" placeholder="Aid amount">
                                         </div>
                                     </div>
                                     <div class="form-group has-feedback">
-                                        <label class="col-lg-3 control-label">Terms</label>
-                                        <div class="col-lg-7">
+                                        <label class="col-lg-4 control-label">Terms</label>
+                                        <div class="col-lg-8">
                                             <select class="form-control special_select" name="term">
                                                 @for($x = 0 ; $x < 24; $x++)
                                                 <option value="{{$x+1}}"> {{$x+1}} month(s)</option>
@@ -112,8 +112,8 @@
                                         </div>
                                     </div>
                                     <div class="form-group has-feedback">
-                                        <label class="col-lg-3 control-label">Purpose of Financial Aid</label>
-                                        <div class="col-lg-7">
+                                        <label class="col-lg-4 control-label">Purpose of Financial Aid</label>
+                                        <div class="col-lg-8">
                                             <textarea class="form-control" name="purpose" rows="4">       </textarea>
                                         </div>
                                     </div>
@@ -221,26 +221,26 @@
                                 <div id="demo-bv-tab3" class="tab-pane">
                                     <h3>Disbursement Information</h3>
                                     <div class="form-group">
-                                        <label class="col-sm-4 control-label">Bank Name</label>
-                                        <div class="col-sm-8">
+                                        <label class="col-lg-4 control-label">Bank Name</label>
+                                        <div class="col-lg-8">
                                            <select class="form-control special_select">
                                                @foreach(\App\Models\Bank::all() as $serial => $bank)
                                                <option value="{{$bank->id}}">
                                                   {{$bank->name}}
                                                </option>
-                                                   @endforeach
+                                               @endforeach
                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-4 control-label">Account Number</label>
-                                        <div class="col-sm-8">
+                                        <label class="col-lg-4 control-label">Account Number</label>
+                                        <div class="col-lg-8">
                                             <input type="text" placeholder="Account Number" name="account_number" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-4 control-label">BVN</label>
-                                        <div class="col-sm-8">
+                                        <label class="col-lg-4 control-label">BVN</label>
+                                        <div class="col-lg-8">
                                             <input type="text" placeholder="BVN (Bank Verification Number)" name="bvn" class="form-control">
                                         </div>
                                     </div>
@@ -292,8 +292,8 @@
                                 <div id="demo-bv-tab5" class="tab-pane mar-btm text-center">
                                     <h3>Collateral</h3>
                                     <div class="form-group">
-                                        <label for="demo-is-inputnormal" class="col-sm-3 control-label"> Collateral</label>
-                                        <div class="col-sm-6">
+                                        <label for="demo-is-inputnormal" class="col-sm-4 control-label"> Collateral</label>
+                                        <div class="col-sm-8">
                                             <select class="special_select form-control" name="collateral">
                                                 @foreach(\App\Models\Collateral::all() as $serial => $collateral)
                                                 <option value="{{$collateral->id}}">{{$collateral->name}}</option>
@@ -302,8 +302,8 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="demo-is-inputnormal" class="col-sm-3 control-label"> Normal Input</label>
-                                        <div class="col-sm-6">
+                                        <label for="demo-is-inputnormal" class="col-sm-4 control-label"> Normal Input</label>
+                                        <div class="col-sm-8">
                                              <textarea class="form-control" name="collateral_description" rows="4"></textarea>
                                         </div>
                                     </div>
@@ -311,7 +311,7 @@
 
                                 <div id="demo-bv-tab6" class="tab-pane mar-btm text-center">
                                     <h3>Declaration</h3>
-                                    <p class="text text-md">
+                                    <p class="text text-md text-justify">
                                             I/We hereby apply for a financial aid with FODDS Capital. I/We accept and agree to be bound by the Terms &amp; Conditions
                                             should an acceptance of financial aid request and offer be made by FODDS Capital. I/We hereby accept my/our liability to
                                             FODDS Capital. I/We understand that FODDS Capital may, at its discretion, terminate this agreement for breach of any of

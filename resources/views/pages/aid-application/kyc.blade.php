@@ -25,6 +25,7 @@
         <!-- KYC FORM Opening -->
          <div class="kyc_forms">
          <input type="hidden" id="count_kyc_form" value="1"/>
+         <input type="hidden" name="type_id" value="{{$type}}"/>
          <div id="kyc_form_1" class="panel">
         <div class="panel-heading">
             <h3 class="panel-title">Business Owner / Partner Detail</h3>

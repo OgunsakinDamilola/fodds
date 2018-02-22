@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Bank;
 use App\Models\Collateral;
 use App\Models\Designation;
+use App\Models\FinancialAid;
 use App\Models\FinancialAidType;
 use App\Models\IdentityType;
+use App\Models\KYC;
 use App\Models\Title;
 use Illuminate\Http\Request;
 
@@ -53,7 +55,7 @@ class FinancialAidController extends Controller
             'residential_address.*' => 'required|string',
             'designation.*' => 'required',
             'date_of_birth.*' => 'required',
-            'phone.*' => 'required|digits:11',
+            'phone.*' => 'required',
             'email.*' => 'required|string|email|max:255',
             'id_type.*' => 'required',
             'id_number.*' => 'required',
@@ -61,6 +63,15 @@ class FinancialAidController extends Controller
             'id_expiry_date.*' => 'required',
             'passport_photo_path.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
+        $type = $r->type;
+        $financial_aid = FinancialAid::store(auth()->id());
+        if ($financial_aid)
+        {
+            $financial_aid_id = $financial_aid->id;
+            $data = $r->all();
+            $store = KYC::store($data,$financial_aid_id,$r);
+            return view('pages.aid-application.questionnaire', compact('type','financial_aid_id','type'));
+        }
 
 
     }
