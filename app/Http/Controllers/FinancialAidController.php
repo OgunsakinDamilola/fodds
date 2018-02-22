@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\Bank;
 use App\Models\Collateral;
 use App\Models\Designation;
@@ -33,8 +32,7 @@ class FinancialAidController extends Controller
     public function apply($type){
         $titles = $this->Helpers->titles();
         $designations = $this->Helpers->designations();
-        return view('pages.aid-application.kyc',compact('type','titles','designations'));
-
+        return view('pages.aid-application.kyc',compact('type','titles','designations'));    
     }
 
     public function questionnaire($type)
