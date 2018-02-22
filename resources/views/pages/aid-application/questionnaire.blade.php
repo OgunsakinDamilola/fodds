@@ -27,7 +27,7 @@
                 <div class="box-vmiddle pad-all">
                     <h3 class="text-main">Financial Questionnaire</h3>
                      <div class="pad-ver">
-                        <i class="demo-pli- icon-5x"></i>
+                        <i class="ti ti-face-smile icon-5x"></i>
                      </div>
                      <p class="pad-btn text-md">You are almost done, just few more forms to go.</p>
                     <br>
@@ -88,7 +88,8 @@
 
 
                     <!--Form-->
-                    <form id="demo-bv-wz-form" class="form-horizontal bv-form" novalidate="novalidate"><button type="submit" class="bv-hidden-submit" style="display: none; width: 0px; height: 0px;" disabled="disabled"></button>
+                    <form id="demo-bv-wz-form" class="form-horizontal bv-form" novalidate="novalidate" method="post" action="{{url('/save/questionnaire')}}">
+                        <button type="submit" class="bv-hidden-submit" style="display: none; width: 0px; height: 0px;" disabled="disabled"></button>
                         <div class="panel-body">
                             <div class="tab-content">
 
@@ -220,7 +221,7 @@
                                 <!--Third tab-->
                                 <div id="demo-bv-tab3" class="tab-pane">
                                     <h3>Disbursement Information</h3>
-                                    <div class="form-group">
+                                    <div class="form-group has-feedback">
                                         <label class="col-lg-4 control-label">Bank Name</label>
                                         <div class="col-lg-8">
                                            <select class="form-control special_select">
@@ -232,13 +233,13 @@
                                            </select>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group has-feedback">
                                         <label class="col-lg-4 control-label">Account Number</label>
                                         <div class="col-lg-8">
                                             <input type="text" placeholder="Account Number" name="account_number" class="form-control">
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group has-feedback">
                                         <label class="col-lg-4 control-label">BVN</label>
                                         <div class="col-lg-8">
                                             <input type="text" placeholder="BVN (Bank Verification Number)" name="bvn" class="form-control">
@@ -291,9 +292,9 @@
 
                                 <div id="demo-bv-tab5" class="tab-pane mar-btm text-center">
                                     <h3>Collateral</h3>
-                                    <div class="form-group">
-                                        <label for="demo-is-inputnormal" class="col-sm-4 control-label"> Collateral</label>
-                                        <div class="col-sm-8">
+                                    <div class="form-group has-feedback">
+                                        <label class="col-lg-4 control-label"> Collateral</label>
+                                        <div class="col-lg-8">
                                             <select class="special_select form-control" name="collateral">
                                                 @foreach(\App\Models\Collateral::all() as $serial => $collateral)
                                                 <option value="{{$collateral->id}}">{{$collateral->name}}</option>
@@ -302,7 +303,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="demo-is-inputnormal" class="col-sm-4 control-label"> Normal Input</label>
+                                        <label class="col-sm-4 control-label"> Collateral Description</label>
                                         <div class="col-sm-8">
                                              <textarea class="form-control" name="collateral_description" rows="4"></textarea>
                                         </div>
@@ -310,17 +311,21 @@
                                 </div>
 
                                 <div id="demo-bv-tab6" class="tab-pane mar-btm text-center">
-                                    <h3>Declaration</h3>
-                                    <p class="text text-md text-justify">
-                                            I/We hereby apply for a financial aid with FODDS Capital. I/We accept and agree to be bound by the Terms &amp; Conditions
-                                            should an acceptance of financial aid request and offer be made by FODDS Capital. I/We hereby accept my/our liability to
-                                            FODDS Capital. I/We understand that FODDS Capital may, at its discretion, terminate this agreement for breach of any of
-                                            the terms and conditions, at which point all outstanding obligations become due. I/We declare that the information given
-                                            is true and accurate to the best of my/our knowledge. I/We authorize FODDS Capital to carry out all necessary credit checks
-                                            with credit bureau and relevant background checks in the process of appraising my/our application. In the event that the amount
-                                            I/We qualify for is less than the amount applied for, I/We authorize FODDS Capital to contact me and credit my account with the
-                                            approved amount.
-                                    </p>
+                                    <div class="row">
+                                        <div class="col-md-8 col-md-offset-2">
+                                            <h3>Declaration</h3>
+                                            <p class="text text-md text-justify">
+                                                I/We hereby apply for a financial aid with FODDS Capital. I/We accept and agree to be bound by the Terms &amp; Conditions
+                                                should an acceptance of financial aid request and offer be made by FODDS Capital. I/We hereby accept my/our liability to
+                                                FODDS Capital. I/We understand that FODDS Capital may, at its discretion, terminate this agreement for breach of any of
+                                                the terms and conditions, at which point all outstanding obligations become due. I/We declare that the information given
+                                                is true and accurate to the best of my/our knowledge. I/We authorize FODDS Capital to carry out all necessary credit checks
+                                                with credit bureau and relevant background checks in the process of appraising my/our application. In the event that the amount
+                                                I/We qualify for is less than the amount applied for, I/We authorize FODDS Capital to contact me and credit my account with the
+                                                approved amount.
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
