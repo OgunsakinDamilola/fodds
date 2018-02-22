@@ -1,4 +1,5 @@
 $(function(){
+    let title = [];
 
     $('#add_business').on('click',function(){
 

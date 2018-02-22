@@ -25,4 +25,3 @@ Route::get('/activation/{token}', 'Auth\RegisterController@verifyUser');
 
 Route::get('apply/{id}/financial-aid','FinancialAidController@apply');
 
-Route::get('apply/{id}/financial-aid/financial-questionnaire','FinancialAidController@questionnaire');

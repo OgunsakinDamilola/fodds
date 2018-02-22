@@ -15,10 +15,10 @@ class DesignationsTableSeeder extends Seeder
         $desginations = [
             ['name' => 'Director'],
             ['name' => 'Owner'],
-            ['name' => 'Partner'],
+            ['name' => 'Partner']
         ];
 
         foreach ($desginations as $key => $desgination)
-            Designation::create($desginations);
+            Designation::create($desgination);
     }
 }
