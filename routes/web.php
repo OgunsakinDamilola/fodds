@@ -31,3 +31,4 @@ Route::get('/titles','HelpersController@titles');
 Route::get('/designations','HelpersController@designations');
 Route::get('/banks','HelpersController@banks');
 Route::get('/collateral','HelpersController@collateral');
+
