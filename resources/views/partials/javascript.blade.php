@@ -1,25 +1,23 @@
 <script src="{{asset('js/jquery.min.js')}}"></script>
 
-
 <!--BootstrapJS [ RECOMMENDED ]-->
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
-
 
 <!--NiftyJS [ RECOMMENDED ]-->
 <script src="{{asset('js/nifty.min.js')}}"></script>
 
-
+<script src="{{asset('js/app.js')}}"></script>
 <!--=================================================-->
 
 <!--Demo script [ DEMONSTRATION ]-->
 {{--<script src="{{asset('js/demo/nifty-demo.min.js')}}"></script>--}}
 
-
 <!--Flot Chart [ OPTIONAL ]-->
 <script src="{{asset('plugins/flot-charts/jquery.flot.min.js')}}"></script>
-<script src="{{asset('plugins/flot-charts/jquery.flot.resize.min.js')}}"></script>
-<script src="{{asset('plugins/flot-charts/jquery.flot.tooltip.min.js')}}"></script>
 
+<script src="{{asset('plugins/flot-charts/jquery.flot.resize.min.js')}}"></script>
+
+<script src="{{asset('plugins/flot-charts/jquery.flot.tooltip.min.js')}}"></script>
 
 <!--Sparkline [ OPTIONAL ]-->
 <script src="{{asset('plugins/sparkline/jquery.sparkline.min.js')}}"></script>
@@ -67,7 +65,22 @@
 <!--Form Component [ SAMPLE ]-->
 <script src="{{asset('js/demo/form-component.js')}}"></script>
 
-<script src="{{asset('js/app.js')}}"></script>
+<script src="{{asset('plugins/dropzone/dropzone.min.js')}}"></script>
+
+<!--Form File Upload [ SAMPLE ]-->
+<script src="{{asset('js/demo/form-file-upload.js')}}"></script>
+
+<!--Bootstrap Table Sample [ SAMPLE ]-->
+<script src="{{asset('js/demo/tables-bs-table.js')}}"></script>
+
+<!--X-editable [ OPTIONAL ]-->
+<script src="{{asset('plugins/x-editable/js/bootstrap-editable.min.js')}}"></script>
+
+<!--Bootstrap Table [ OPTIONAL ]-->
+<script src="{{asset('plugins/bootstrap-table/bootstrap-table.min.js')}}"></script>
+
+<!--Bootstrap Table Extension [ OPTIONAL ]-->
+<script src="{{asset('plugins/bootstrap-table/extensions/editable/bootstrap-table-editable.js')}}"></script>
 
 <script src="{{asset('js/required.js')}}"></script>
 

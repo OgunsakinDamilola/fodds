@@ -18,11 +18,11 @@ class CreateReferenceInformationsTable extends Migration
             $table->integer('user_id');
             $table->integer('financial_aid_id');
             $table->string('name');
-            $table->string('address');
+            $table->longText('address');
             $table->string('phone_number');
             $table->string('email');
             $table->string('profession');
-            $table->string('office_address');
+            $table->longText('office_address');
             $table->timestamps();
         });
     }

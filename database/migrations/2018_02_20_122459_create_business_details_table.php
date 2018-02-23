@@ -24,12 +24,13 @@ class CreateBusinessDetailsTable extends Migration
             $table->integer('number_of_year_in_existence');
             $table->integer('tax_identification_number');
             $table->string('nature_of_business');
-            $table->string('business_address');
+            $table->longText('business_address');
             $table->string('phone_number');
             $table->string('email_address');
             $table->integer('number_of_staff');
             $table->integer('owner_partner');
             $table->integer('number_of_official_equipment_with_value_above_100000');
+            $table->integer('total_sum_of_official_equipment_with_value_above_100000');
             $table->bigInteger('last_financial_year_turn_over');
             $table->bigInteger('last_financial_year_profit');
             $table->timestamps();

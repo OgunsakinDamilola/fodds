@@ -115,15 +115,13 @@
                                     <div class="form-group has-feedback">
                                         <label class="col-lg-4 control-label">Purpose of Financial Aid</label>
                                         <div class="col-lg-8">
-                                            <textarea class="form-control" name="purpose" rows="4">       </textarea>
+                                            <textarea class="form-control" name="purpose" rows="4"></textarea>
                                         </div>
                                     </div>
                                 </div>
-
                                 <!--Second tab-->
                                 <div id="demo-bv-tab2" class="tab-pane fade">
                                     <h3> Business Details   <small class="text text-sm-right">All fields are required</small> </h3>
-
                                     <div class="row">
                                         <div class="col-md-8">
                                             <div class="form-group">
@@ -136,14 +134,13 @@
                                                 <label class="control-label"> Business Type</label>
                                                 <div class="radio">
                                                         <input id="demo-inline-form-radio-2" checked class="magic-radio" type="radio" name="business_type">
-                                                        <label for="demo-inline-form-radio-2">Sole Proprietorship</label>
+                                                        <label for="demo-inline-form-radio-2"> Sole Proprietorship</label>
                                                         <input id="demo-inline-form-radio-3" class="magic-radio" type="radio" name="business_type">
-                                                        <label for="demo-inline-form-radio-3">Partnership </label>
+                                                        <label for="demo-inline-form-radio-3"> Partnership </label>
                                                     </div>
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="row">
                                             <div class="form-group col-md-3">
                                                 <label> Cert Of Registration Number</label>
@@ -177,18 +174,17 @@
                                                 </textarea>
                                             </div>
                                     </div>
-
                                     <div class="row">
                                             <div class="form-group col-md-3">
-                                                <label class="control-label">Phone Number</label>
+                                                <label class="control-label"> Phone Number</label>
                                                 <input class="form-control" name="business_phone" type="text"/>
                                             </div>
                                             <div class="form-group col-md-3">
-                                                <label class="control-label">Email</label>
+                                                <label class="control-label"> Email</label>
                                                 <input class="form-control" name="business_email" type="email"/>
                                             </div>
                                             <div class="form-group col-md-3">
-                                                <label class="control-label">Number of Staff</label>
+                                                <label class="control-label"> Number of Staff</label>
                                                 <input class="form-control" name="number_of_staff" type="text"/>
                                             </div>
                                             <div class="form-group col-md-3">
@@ -196,7 +192,6 @@
                                                 <input class="form-control" name="number_of_owners" type="text"/>
                                             </div>
                                     </div>
-
                                     <div class="row">
                                             <div class="form-group col-md-4">
                                                 <label class="control-label"><small> Number of Office Equipment with value above 100,000</small></label>

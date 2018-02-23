@@ -322,13 +322,6 @@ $(document).on('nifty.ready', function() {
                     }
                 }
             },
-            years_of_existence: {
-                validators: {
-                    notEmpty: {
-                        message: 'Business years of existence is required'
-                    }
-                }
-            },
             business_tin: {
                 validators: {
                     notEmpty: {
