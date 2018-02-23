@@ -66,21 +66,21 @@ class FinancialAidController extends Controller
             'id_expiry_date.*' => 'required',
             'passport_photo_path.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
-        $type = $r->type;
+        $type = $r->type_id;
+
         $financial_aid = FinancialAid::store(auth()->id());
         if ($financial_aid)
         {
             $financial_aid_id = $financial_aid->id;
             $data = $r->all();
-            $store = KYC::store($data,$financial_aid_id,$r);
+            $store = KYC::store($data, $financial_aid_id, $r);
             Toastr::success('You have completed the KYC form. Just few more forms and you will be done with your application');
-            session()->put('financial_aid_id',$financial_aid_id);
-            session()->put('financial_aid_type',$type);
 
-            return redirect(url('/apply/financial-aid/financial-questionnaire'));
+            session()->put('financial_aid_id', $financial_aid_id);
+            session()->put('financial_aid_type', $type);
+
+            return redirect(url('/apply/financial-aid/financial-questionnaire/'.$financial_aid_id.'/'.$type));
         }
-
-
     }
 
 }

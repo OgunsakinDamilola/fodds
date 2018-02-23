@@ -26,7 +26,7 @@ Route::get('/activation/{token}', 'Auth\RegisterController@verifyUser');
 Route::get('/apply/{id}/financial-aid','FinancialAidController@apply');
 
 
-Route::get('/apply/financial-aid/financial-questionnaire','FinancialAidController@questionnaire');
+Route::get('/apply/financial-aid/financial-questionnaire/{financialAidID}/{financialAidType}', 'FinancialAidController@questionnaire');
 
 Route::post('/save/kyc/information','FinancialAidController@saveKycInformation');
 //Route::post('/save/questionnaire',function(\Illuminate\Http\Request $r){
