@@ -5,7 +5,6 @@
 @section('title') KYC form @endsection
 
 @section('breadcrumb')
-
     <ol class="breadcrumb">
     <li><a href="#"><i class="demo-pli-coin"></i></a></li>
     <li><a href="#">{{$type}} Financial Aid</a></li>
@@ -16,13 +15,18 @@
 @endsection
 
 @section('content')
-
-    <form method="post" enctype="multipart/form-data" action="">
+    @foreach ($errors->all() as $message)
+        <div class="alert alert-danger">
+            {{$message}}
+        </div>
+    @endforeach
+    <form method="post" enctype="multipart/form-data" action="{{url('/save/kyc/information')}}">
         @csrf
         <!-- KYC FORM Opening -->
-<div class="kyc_forms">
-    <input type="hidden" id="count_kyc_form" value="1"/>
-    <div id="kyc_form_1" class="panel">
+         <div class="kyc_forms">
+         <input type="hidden" id="count_kyc_form" value="1"/>
+         <input type="hidden" name="type_id" value="{{$type}}"/>
+         <div id="kyc_form_1" class="panel">
         <div class="panel-heading">
             <h3 class="panel-title">Business Owner / Partner Detail</h3>
         </div>
@@ -87,7 +91,7 @@
                 <div class="col-md-3">
                     <div class="form-group has-feedback">
                         <label class="control-label text-semibold">Detail Designation</label>
-                        <select class="special_select form-control" name="designation" required>
+                        <select class="special_select form-control" name="designation[]" required>
                             <optgroup label="Designation">
                                 @foreach(\App\Models\Designation::all() as $serial => $designation)
                                 <option value="{{$designation->id}}">{{$designation->name}}</option>
@@ -99,21 +103,21 @@
                 <div class="col-md-3">
                     <div class="form-group has-feedback">
                         <label class="control-label text-semibold"> Email</label>
-                        <input type="email" placeholder="E-mail" class="form-control" name="email" required>
+                        <input type="email" placeholder="E-mail" class="form-control" name="email[]" required>
                         <i class="demo-pli-mail form-control-feedback"></i>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group has-feedback">
                         <label class="control-label text-semibold"> Phone Number</label>
-                        <input type="text" placeholder="11 digits number" class="form-control" name="phone" required>
+                        <input type="text" placeholder="11 digits number" class="form-control" name="phone[]" required>
                         <i class="demo-pli-old-telephone form-control-feedback"></i>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group has-feedback">
                         <label class="control-label text-semibold"> Date of Birth</label>
-                        <input type="text" placeholder="Date of birth" class="form-control datepicker" name="date_of_birth" required>
+                        <input type="text" placeholder="Date of birth" class="form-control datepicker" name="date_of_birth[]" required>
                         <i class="demo-pli-calendar-4 form-control-feedback"></i>
                     </div>
                 </div>
@@ -123,7 +127,11 @@
                 <div class="col-md-3">
                     <div class="form-group has-feedback">
                         <label class="control-label text-semibold">ID Type</label>
-                        <input type="text" placeholder="Identity Card Type" class="form-control" name="id_type[]" required>
+                        <select name="id_type[]" required class="form-control special_select">
+                          @foreach(\App\Models\IdentityType::all() as $serial => $info)
+                             <option value="{{$info->id}}">{{$info->name}}</option>
+                          @endforeach
+                        </select>
                         <i class="demo-pli-checked-user form-control-feedback"></i>
                     </div>
                 </div>
@@ -172,11 +180,11 @@
 
         </div>
     </div>
-</div>
+        </div>
 
-    <!-- KYC FORM Close -->
+        <!-- KYC FORM Close -->
 
-    <div class="panel">
+         <div class="panel">
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
@@ -208,8 +216,9 @@
 
 @section('javascript')
     <script>
-        var titles = '<?= $titles ?>';
-        var designations = '<?= $designations ?>';
+        var titles = '<?= $titles; ?>';
+        var designations = '<?= $designations; ?>';
+        var identities = '<?= $identities; ?>';
     </script>
 <script src="{{asset('js/pages/kyc.js')}}"></script>
 @endsection

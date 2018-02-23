@@ -322,13 +322,6 @@ $(document).on('nifty.ready', function() {
                     }
                 }
             },
-            years_of_existence: {
-                validators: {
-                    notEmpty: {
-                        message: 'Business years of existence is required'
-                    }
-                }
-            },
             business_tin: {
                 validators: {
                     notEmpty: {
@@ -361,6 +354,9 @@ $(document).on('nifty.ready', function() {
                 validators: {
                     notEmpty: {
                         message: 'Business email is required'
+                    },
+                    emailAddress: {
+                        message: 'The input is not a valid email address'
                     }
                 }
             },
@@ -368,9 +364,8 @@ $(document).on('nifty.ready', function() {
                 validators: {
                     notEmpty: {
                         message: 'Number of staff is required'
-                    },
-                    emailAddress: {
-                        message: 'The input is not a valid email address'
+                    },digits: {
+                        message: 'The value can contain only digits'
                     }
                 }
             },
@@ -378,6 +373,8 @@ $(document).on('nifty.ready', function() {
                 validators: {
                     notEmpty: {
                         message: 'Number of owners is required'
+                    },digits: {
+                        message: 'The value can contain only digits'
                     }
                 }
             },
@@ -385,6 +382,8 @@ $(document).on('nifty.ready', function() {
                 validators: {
                     notEmpty: {
                         message: 'Number of office equipment with value above 100,000 is required is required'
+                    },digits: {
+                        message: 'The value can contain only digits'
                     }
                 }
             },
@@ -392,6 +391,8 @@ $(document).on('nifty.ready', function() {
                 validators: {
                     notEmpty: {
                         message: 'Total amount of office equipment with value above 100,000 is required is required'
+                    },digits: {
+                        message: 'The value can contain only digits'
                     }
                 }
             },
@@ -399,6 +400,8 @@ $(document).on('nifty.ready', function() {
                 validators: {
                     notEmpty: {
                         message: 'Last financial year turn over is required'
+                    },digits: {
+                        message: 'The value can contain only digits'
                     }
                 }
             },
@@ -406,6 +409,8 @@ $(document).on('nifty.ready', function() {
                 validators: {
                     notEmpty: {
                         message: 'Last financial year profit is required'
+                    },digits: {
+                        message: 'The value can contain only digits'
                     }
                 }
             },
@@ -421,6 +426,8 @@ $(document).on('nifty.ready', function() {
                     notEmpty: {
                         message: 'Enter bank verification number for account'
                     }
+                },digits: {
+                    message: 'The value can contain only digits'
                 }
             },
             reference_first_name: {

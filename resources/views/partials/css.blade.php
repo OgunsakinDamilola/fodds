@@ -42,5 +42,17 @@
 
 <link href="{{asset('plugins/bootstrap-validator/bootstrapValidator.min.css')}}" rel="stylesheet">
 
+<link href="{{asset('plugins/dropzone/dropzone.min.css')}}" rel="stylesheet">
+
+<!--Bootstrap Table [ OPTIONAL ]-->
+<link href="{{asset('plugins/bootstrap-table/bootstrap-table.min.css')}}" rel="stylesheet">
+
+<!--Font Awesome [ OPTIONAL ]-->
+<link href="{{asset('plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+
+<!--X-editable [ OPTIONAL ]-->
+<link href="{{asset('plugins/x-editable/css/bootstrap-editable.css')}}" rel="stylesheet">
+
 <link href="{{asset('css/required.css')}}" rel="stylesheet"/>
+
 
