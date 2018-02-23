@@ -174,7 +174,8 @@ $(function(){
 
         $('.datepicker').datepicker({
             showClose : true,
-            showClear : true
+            showClear : true,
+            autoclose : true,
         });
 
     });

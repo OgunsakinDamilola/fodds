@@ -39,4 +39,5 @@ Route::get('/designations','HelpersController@designations');
 Route::get('/banks','HelpersController@banks');
 Route::get('/collateral','HelpersController@collateral');
 Route::get('/identities','HelpersController@identities');
+Route::post('/saveDocuments','HelpersController@saveDocuments')->name('dropzone.fileupload');
 

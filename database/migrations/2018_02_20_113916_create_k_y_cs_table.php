@@ -21,11 +21,11 @@ class CreateKYCsTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('middle_name');
-            $table->string('address');
+            $table->longText('address');
             $table->integer('designation_id');
             $table->string('date_of_birth');
             $table->string('tax_identification_number')->nullable();
-            $table->string('residential_address');
+            $table->longText('residential_address');
             $table->string('phone');
             $table->string('email');
             $table->integer('identity_type_id');
