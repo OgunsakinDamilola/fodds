@@ -115,8 +115,8 @@
                         <i class="arrow"></i>
                     </a>
                     <ul class="collapse">
-                        <li><a {{--class="apply_for_aid"--}} onclick="triggerRequirements(1)" href="#"> Cooperate Financial Aid </a></li>
-                        <li><a {{--class="apply_for_aid"--}} onclick="triggerRequirements(2)" href="#"> Individual Financial Aid </a></li>
+                        <li><a {{--class="apply_for_aid"--}} onclick="popUpRequirements(1)" href="#"> Cooperate Financial Aid </a></li>
+                        <li><a {{--class="apply_for_aid"--}} onclick="popUpRequirements(2)" href="#"> Individual Financial Aid </a></li>
                     </ul>
                 </li>
                 <li class="list-divider"></li>

@@ -62,4 +62,13 @@ class HelpersController extends Controller
         return $returnValues;
     }
 
+    public function saveDocuments(Request $r){
+
+        $image = $r->file('file');
+        $imageName = time().$image->getClientOriginalName();
+        $imagePath = 'images/customers/documents/'.$imageName;
+        $image->move(public_path('images/customers/documents/'),$imageName);
+
+    }
+
 }
