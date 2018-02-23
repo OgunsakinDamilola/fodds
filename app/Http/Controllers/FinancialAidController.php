@@ -33,18 +33,12 @@ class FinancialAidController extends Controller
         ];
     }
 
-    public function apply($type){
+    public function apply($type)
+    {
         $titles = $this->Helpers->titles();
         $designations = $this->Helpers->designations();
-        $identities   = $this->Helpers->identities();
-        return view('pages.aid-application.kyc',compact('type','titles','designations','identities'));
-    }
-
-    public function questionnaire()
-    {
-        $type = session()->get('financial_aid_type');
-        $aid_id = session()->get('financial_aid_id');
-        return view('pages.aid-application.questionnaire', compact('type','aid_id'));
+        $identities = $this->Helpers->identities();
+        return view('pages.aid-application.kyc', compact('type', 'titles', 'designations', 'identities'));
     }
 
     public function saveKycInformation(request $r)
@@ -66,21 +60,30 @@ class FinancialAidController extends Controller
             'id_expiry_date.*' => 'required',
             'passport_photo_path.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
-        $type = $r->type;
+
+        $type = $r->type_id;
+
         $financial_aid = FinancialAid::store(auth()->id());
         if ($financial_aid)
         {
             $financial_aid_id = $financial_aid->id;
+
             $data = $r->all();
-            $store = KYC::store($data,$financial_aid_id,$r);
+
+            KYC::store($data, $financial_aid_id, $r);
+
             Toastr::success('You have completed the KYC form. Just few more forms and you will be done with your application');
-            session()->put('financial_aid_id',$financial_aid_id);
-            session()->put('financial_aid_type',$type);
 
-            return redirect(url('/apply/financial-aid/financial-questionnaire'));
+            return redirect(url('/apply/financial-aid/financial-questionnaire/' . $financial_aid_id . '/' . $type));
         }
+    }
 
+    public function questionnaire(Request $request)
+    {
+        $type = $request->financialAidType;
+        $aid_id = $request->financialAidID;
 
+        return view('pages.aid-application.questionnaire', compact('type', 'aid_id'));
     }
 
 }
